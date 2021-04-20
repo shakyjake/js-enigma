@@ -27,6 +27,10 @@ const Enigma = function(Rotors, Reflector, Config){
 	
 	_.Rotors = Rotors;
 	_.Reflector = Reflector;
+
+	_.IsLetter = function(Char){
+		return /[A-Z]/.test(Char);
+	};
 	
 	_.NormaliseRotors = function(){
 		_.Rotors.forEach(function(Rotor, RotorIndex){
@@ -62,38 +66,44 @@ const Enigma = function(Rotors, Reflector, Config){
 	};
 	
 	_.ProcessLetter = function(Letter){
-		
-		_.Revolve();
-		
-		const Letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-		Letter = Letter.toUpperCase();
-		
-		let i = 0;
-		let j = _.Rotors.length;
-		let k = _.FindLetterIndex(Letter, Letters);
-		
-		while(i < j){
-			
-			Letter = _.Rotors[i][0][k];
-			k = _.FindLetterIndex(Letter, _.Rotors[i][1]);
-			
-			i += 1;
-			
-		}
 
-		Letter = _.Reflector[0][k];
-		k = _.FindLetterIndex(Letter, _.Reflector[1]);
+		if(_.IsLetter(Letter)){
 		
-		while(i){
+			_.Revolve();
 			
-			i -= 1;
+			const Letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+			Letter = Letter.toUpperCase();
 			
-			Letter = _.Rotors[i][1][k];
-			k = _.FindLetterIndex(Letter, _.Rotors[i][0]);
+			let i = 0;
+			let j = _.Rotors.length;
+			let k = _.FindLetterIndex(Letter, Letters);
 			
+			while(i < j){
+				
+				Letter = _.Rotors[i][0][k];
+				k = _.FindLetterIndex(Letter, _.Rotors[i][1]);
+				
+				i += 1;
+				
+			}
+
+			Letter = _.Reflector[0][k];
+			k = _.FindLetterIndex(Letter, _.Reflector[1]);
+			
+			while(i){
+				
+				i -= 1;
+				
+				Letter = _.Rotors[i][1][k];
+				k = _.FindLetterIndex(Letter, _.Rotors[i][0]);
+				
+			}
+			
+			return Letters[k];
+
+		} else {
+			return Letter;
 		}
-		
-		return Letters[k];
 	
 	};
 	
