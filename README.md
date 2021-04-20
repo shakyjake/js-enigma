@@ -1,6 +1,8 @@
 # JS Enigma
 A javascript enigma machine solver
 
+Demo: https://shakyjake.github.io/js-enigma/
+
 Usage:
 
 const Machina = new Enigma(Rotors, Reflector[, Options]);
