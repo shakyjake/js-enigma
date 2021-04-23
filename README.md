@@ -22,3 +22,6 @@ Machina.Solve('My Secret Message');
 * `Match` - _`[string]`_ a string to match
 * `MatchMode` - _`[string]`_ either "StartsWith" or "Contains"
 * `Callback` - _`[function]`_ what to do with the results
+
+## Questions / Comments / Complaints?
+![What do you want? I wrote it in a day](https://media.giphy.com/media/kOMhv7Gwru25DWvBAd/giphy.gif)
