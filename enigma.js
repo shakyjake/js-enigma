@@ -131,11 +131,11 @@ const Enigma = function(Rotors, Reflector, Config){
 				while(k){/* hoo boy */
 					k -= 1;
 					Callback();
-					_.RevolveSingle[2];
+					_.RevolveSingle(2);
 				}
-				_.RevolveSingle[1];
+				_.RevolveSingle(1);
 			}
-			_.RevolveSingle[0];
+			_.RevolveSingle(0);
 		}
 	};
 
