@@ -24,4 +24,4 @@ Machina.Solve('My Secret Message');
 * `Callback` - _`[function]`_ what to do with the results
 
 ## Questions / Comments / Complaints?
-![What do you want? I wrote it in a day](https://media.giphy.com/media/kOMhv7Gwru25DWvBAd/giphy.gif)
+![What do you want? I wrote it in a day](https://media.giphy.com/media/v0bnGMbQFyWf72jnZf/giphy.gif)
